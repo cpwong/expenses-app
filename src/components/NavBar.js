@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { ExpenseContext } from '../store/expenseContext'
+import { ExpenseContext } from '../store/ExpenseContext'
 
 function NavBar() {
   

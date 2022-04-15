@@ -1,7 +1,7 @@
 import ExpenseList from './components/ExpenseList';
 import NavBar from './components/NavBar';
 import NewExpenseForm from './components/NewExpenseForm';
-import ExpenseContextProvider from './store/expenseContext';
+import ExpenseContextProvider from './store/ExpenseContext';
 
 function App() {
   return (

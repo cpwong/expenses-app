@@ -1,15 +1,26 @@
 import { useContext, useState } from 'react'
-import { ExpenseContext } from '../store/expenseContext'
+import { ExpenseContext } from '../store/ExpenseContext'
+import { ADD_EXPENSE } from '../reducers/ExpenseReducer'
 
 function NewExpenseForm() {
   
-  const { addExpense } = useContext(ExpenseContext)
+  // Change addExpense --> dispatch
+  const { dispatch } = useContext(ExpenseContext)
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
   const [price, setPrice] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault()
-    addExpense(description, category, price)
+    
+    //addExpense(description, category, price)
+    dispatch({
+      type: ADD_EXPENSE,
+      expense: {
+        description,
+        category,
+        price
+      }
+    })
     setDescription('')
     setCategory('')
     setPrice('')
